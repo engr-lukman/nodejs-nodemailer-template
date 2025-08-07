@@ -28,9 +28,9 @@ app.use(express.json());
  * Configure Nodemailer transporter
  * Uses environment variables for email service configuration
  */
-const transporter = nodemailer.createTransporter({
-  host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-  port: parseInt(process.env.EMAIL_PORT, 10) || 587,
+const transporter = nodemailer.createTransport({
+  host: process.env.EMAIL_HOST || 'smtp.googlemail.com',
+  port: parseInt(process.env.EMAIL_PORT, 10) || 465,
   secure: process.env.EMAIL_SECURE === 'true' || false,
   auth: {
     user: process.env.EMAIL_USER,
